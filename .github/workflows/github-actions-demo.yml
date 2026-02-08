@@ -7,7 +7,7 @@ jobs:
       - run: curl --version || true
       - run: dpkg-deb --version || true
       - run: npm --version || true
-      - run: apt install -y quilt
+      - run: sudo apt install -y quilt
       - run: quilt --version || true
       - run: npx @electron/asar --version
       - name: Check out repository code
