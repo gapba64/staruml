@@ -1,0 +1,5 @@
+--- a/package/opt/StarUML/resources/app/src/engine/default-commands.js
++++ b/package/opt/StarUML/resources/app/src/engine/default-commands.js
+@@ -160 +160 @@
+-          "Untitled" + Constants.APP_EXT,
++          "source" + Constants.APP_EXT,
