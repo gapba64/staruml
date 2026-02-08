@@ -1,0 +1,5 @@
+--- a/package/opt/StarUML/resources/app/resources/default/preferences/default.json
++++ b/package/opt/StarUML/resources/app/resources/default/preferences/default.json
+@@ -99 +99 @@
+-      "default": true
++      "default": false

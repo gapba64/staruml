@@ -2,3 +2,4 @@
 02-do-not-check-for-updates-on-startup-by-default.patch
 03-do-not-run-an-http-server-on-startup-by-default.patch
 04-use-a-monospaced-font-family-by-default.patch
+05-do-not-apply-shadows-to-diagram-elements-by-default.patch
