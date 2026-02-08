@@ -1,0 +1,25 @@
+--- a/package/opt/StarUML/resources/app/src/core/repository.js
++++ b/package/opt/StarUML/resources/app/src/core/repository.js
+@@ -1576,0 +1577,19 @@ class Repository extends EventEmitter {
++  sortJSON(data) {
++    if (Array.isArray(data)) {
++      return data.map(item => this.sortJSON(item));
++    }
++
++    if (data !== null && typeof data === "object") {
++      const keys = Object.keys(data).sort();
++      const result = {};
++
++      for (const key of keys) {
++        result[key] = this.sortJSON(data[key]);
++      }
++
++      return result;
++    }
++
++    return data;
++  }
++
+@@ -1586 +1605 @@ class Repository extends EventEmitter {
+-    var data = JSON.stringify(writer.current, null, "\t");
++    var data = JSON.stringify(this.sortJSON(writer.current), null, 2) + "\n";
