@@ -1,18 +1,30 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  - push
 jobs:
   download_deb:
     runs-on: ubuntu-24.04
     container:
-      image: docker.io/library/debian:trixie-20260202-slim
+      image: quay.io/curl/curl:8.18.0
     steps:
-      - run: apt install --assume-yes --no-install-recommends curl npm quilt
-      - run: curl --version || true
-      - run: dpkg-deb --version || true
-      - run: npm --version || true
-      - run: quilt --version || true
-      - run: npx @electron/asar@4.0.1 --version
-      - name: Check out repository code
-        uses: actions/checkout@v5
-      - name: List files in the repository
-        run: ls ${{ github.workspace }}
+      - run: curl --output package.deb https://files.staruml.io/releases-v7/StarUML_7.0.0_amd64.deb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package.deb
+          path: package.deb
+
+  unpack_deb:
+    needs:
+      - download_deb
+    runs-on: ubuntu-24.04
+    container:
+      image: docker.io/library/debian:13.3-slim
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: package.deb
+      - run: dpkg-deb --raw-extract package.deb package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: package
