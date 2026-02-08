@@ -1,4 +1,4 @@
-name: Teste
+name: Teste 2
 on:
   - push
 jobs:
