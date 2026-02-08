@@ -9,7 +9,7 @@ jobs:
       - run: npm --version || true
       - run: sudo apt install -y quilt
       - run: quilt --version || true
-      - run: npx @electron/asar --version
+      - run: npx @electron/asar@4.0.1 --version
       - name: Check out repository code
         uses: actions/checkout@v5
       - name: List files in the repository
