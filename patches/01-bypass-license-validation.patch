@@ -1,0 +1,12 @@
+--- /dev/null
++++ b/package/opt/StarUML/resources/activation.key
+@@ -0,0 +1 @@
++p0bj84OGdeFbn4Xx:uXFxIeQG8lHPB90V0ikfPc+JAp+pWW//jmrFoFf2JStZBW4Qf2yBGFzCx49uW5kVH/ON7r0hZVbZz72ChhOVeej1WVBfRpce/6CGk3TRMiUZajbTMD4OZdcNX7iGEWo=
+--- a/package/opt/StarUML/resources/app/src/utils/license-client.js
++++ b/package/opt/StarUML/resources/app/src/utils/license-client.js
+@@ -14 +14 @@ const LICENSE_SERVER_URL =
+-  "https://dev.staruml-io-astro.pages.dev/api/license-manager";
++  "";
+@@ -172 +172 @@ async function localValidate() {
+-    const filePath = path.join(app.getPath("userData"), LICENSE_FILE_NAME);
++    const filePath = path.join(app.getAppPath(), "../", LICENSE_FILE_NAME);
