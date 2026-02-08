@@ -1,0 +1,5 @@
+--- a/package/opt/StarUML/resources/app/src/main-process/main.js
++++ b/package/opt/StarUML/resources/app/src/main-process/main.js
+@@ -36 +36 @@
+-      if (apiServer !== false) {
++      if (apiServer === true) {

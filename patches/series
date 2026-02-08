@@ -1,2 +1,3 @@
 01-bypass-license-validation.patch
 02-do-not-check-for-updates-on-startup-by-default.patch
+03-do-not-run-an-http-server-on-startup-by-default.patch
