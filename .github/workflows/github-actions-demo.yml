@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-24.04
     container:
       image: quay.io/curl/curl:8.18.0
+      options: --user root
     steps:
       - run: curl --output package.deb https://files.staruml.io/releases-v7/StarUML_7.0.0_amd64.deb
       - uses: actions/upload-artifact@v4
