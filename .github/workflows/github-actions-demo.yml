@@ -6,10 +6,10 @@ jobs:
     container:
       image: docker.io/library/debian:trixie-20260202-slim
     steps:
+      - run: apt install --assume-yes --no-install-recommends curl npm quilt
       - run: curl --version || true
       - run: dpkg-deb --version || true
       - run: npm --version || true
-      - run: sudo apt install -y quilt
       - run: quilt --version || true
       - run: npx @electron/asar@4.0.1 --version
       - name: Check out repository code
