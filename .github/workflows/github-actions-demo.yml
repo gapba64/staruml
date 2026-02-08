@@ -1,8 +1,10 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  download_deb:
     runs-on: ubuntu-24.04
+    container:
+      image: docker.io/library/debian:trixie-20260202-slim
     steps:
       - run: curl --version || true
       - run: dpkg-deb --version || true
